@@ -26,9 +26,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_checkBox_toggled(bool checked)
 {
-if(checked){
 
-}
 }
 
 
