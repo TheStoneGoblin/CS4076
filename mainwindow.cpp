@@ -21,6 +21,10 @@ QCheckBox *check3;
 QCheckBox *check4;
 QCheckBox *check5;
 QCheckBox *check6;
+QRadioButton *radio1;
+QRadioButton *radio2;
+QRadioButton *radio3;
+QRadioButton *radio4;
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -77,6 +81,31 @@ void MainWindow::on_checkBox_6_toggled(bool checked)
     connect(check6, SIGNAL(toggled(bool)), this, SLOT(on_checkBox_6_toggled(bool)));
 }
 
+void MainWindow::on_radioButton_toggled(bool checked)
+{
+    radio1 = new QRadioButton(this);
+    connect(radio1, SIGNAL(toggled(bool)), this, SLOT(on_radioButton_toggled(bool)));
+}
+
+void MainWindow::on_radioButton_2_toggled(bool checked)
+{
+    radio2 = new QRadioButton(this);
+    connect(radio2, SIGNAL(toggled(bool)), this, SLOT(on_radioButton_2_toggled(bool)));
+}
+
+void MainWindow::on_radioButton_3_toggled(bool checked)
+{
+    radio3 = new QRadioButton(this);
+    connect(radio3, SIGNAL(toggled(bool)), this, SLOT(on_radioButton_3_toggled(bool)));
+}
+
+
+void MainWindow::on_radioButton_4_toggled(bool checked)
+{
+    radio4 = new QRadioButton(this);
+    connect(radio4, SIGNAL(toggled(bool)), this, SLOT(on_radioButton_4_toggled(bool)));
+}
+
 
 void MainWindow::on_pushButton_clicked(){
     push_button = new QPushButton(this);
@@ -106,4 +135,3 @@ void MainWindow::on_pushButton_clicked(){
     pizza->totalCalories = 0;
     pizza->totalPrice = 0;
 }
-
