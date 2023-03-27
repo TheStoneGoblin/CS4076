@@ -23,3 +23,47 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+
+void MainWindow::on_checkBox_toggled(bool checked)
+{
+if(checked){
+
+}
+}
+
+
+void MainWindow::on_checkBox_2_toggled(bool checked)
+{
+
+}
+
+
+void MainWindow::on_checkBox_3_toggled(bool checked)
+{
+
+}
+
+
+void MainWindow::on_checkBox_4_toggled(bool checked)
+{
+
+}
+
+
+void MainWindow::on_checkBox_5_toggled(bool checked)
+{
+
+}
+
+
+void MainWindow::on_checkBox_6_toggled(bool checked)
+{
+
+}
+
+
+void MainWindow::on_pushButton_clicked()
+{
+
+}
+

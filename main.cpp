@@ -2,6 +2,9 @@
 
 #include <QApplication>
 
+int totalCalories = 0;
+
+
 class Food{
 private:
     int calories = 0;
@@ -62,6 +65,11 @@ public:
         return calories;
     }
 };
+
+void makePizza(int ing){
+    Food* food[6] = {new Cheese(), new Corn(), new Ham(), new Mush(), new Olive(), new Ice()};
+    totalCalories += food[ing]->getCalories();
+}
 
 int main(int argc, char *argv[])
 {
