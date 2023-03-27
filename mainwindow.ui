@@ -18,30 +18,16 @@
     <property name="geometry">
      <rect>
       <x>140</x>
-      <y>160</y>
+      <y>90</y>
       <width>481</width>
-      <height>251</height>
+      <height>317</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">
-     <item row="8" column="0" colspan="4">
-      <widget class="QPushButton" name="pushButton">
+     <item row="2" column="2" colspan="2">
+      <widget class="QLabel" name="label_3">
        <property name="text">
-        <string>Make Pizza</string>
-       </property>
-      </widget>
-     </item>
-     <item row="6" column="0">
-      <widget class="QRadioButton" name="radioButton_2">
-       <property name="text">
-        <string>7&quot;</string>
-       </property>
-      </widget>
-     </item>
-     <item row="6" column="1">
-      <widget class="QRadioButton" name="radioButton">
-       <property name="text">
-        <string>9&quot;</string>
+        <string>TextLabel</string>
        </property>
       </widget>
      </item>
@@ -59,31 +45,10 @@
        </property>
       </widget>
      </item>
-     <item row="0" column="0" colspan="2">
-      <widget class="QCheckBox" name="checkBox">
+     <item row="1" column="2" colspan="2">
+      <widget class="QLabel" name="label_2">
        <property name="text">
-        <string>cheese</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="0" colspan="2">
-      <widget class="QCheckBox" name="checkBox_2">
-       <property name="text">
-        <string>corn</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="0" colspan="2">
-      <widget class="QCheckBox" name="checkBox_3">
-       <property name="text">
-        <string>ham</string>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="0" colspan="2">
-      <widget class="QCheckBox" name="checkBox_4">
-       <property name="text">
-        <string>mushroom</string>
+        <string>TextLabel</string>
        </property>
       </widget>
      </item>
@@ -94,10 +59,10 @@
        </property>
       </widget>
      </item>
-     <item row="5" column="0" colspan="2">
-      <widget class="QCheckBox" name="checkBox_6">
+     <item row="4" column="2" colspan="2">
+      <widget class="QLabel" name="label_5">
        <property name="text">
-        <string>ice cream</string>
+        <string>TextLabel</string>
        </property>
       </widget>
      </item>
@@ -108,10 +73,52 @@
        </property>
       </widget>
      </item>
-     <item row="4" column="2" colspan="2">
-      <widget class="QLabel" name="label_5">
+     <item row="0" column="0" colspan="2">
+      <widget class="QCheckBox" name="checkBox">
+       <property name="text">
+        <string>cheese</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="0">
+      <widget class="QRadioButton" name="radioButton_2">
+       <property name="text">
+        <string>7&quot;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2" colspan="2">
+      <widget class="QLabel" name="label">
        <property name="text">
         <string>TextLabel</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0" colspan="2">
+      <widget class="QCheckBox" name="checkBox_3">
+       <property name="text">
+        <string>ham</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0" colspan="2">
+      <widget class="QCheckBox" name="checkBox_6">
+       <property name="text">
+        <string>ice cream</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0" colspan="2">
+      <widget class="QCheckBox" name="checkBox_2">
+       <property name="text">
+        <string>corn</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0" colspan="2">
+      <widget class="QCheckBox" name="checkBox_4">
+       <property name="text">
+        <string>mushroom</string>
        </property>
       </widget>
      </item>
@@ -122,26 +129,22 @@
        </property>
       </widget>
      </item>
-     <item row="2" column="2" colspan="2">
-      <widget class="QLabel" name="label_3">
+     <item row="6" column="1">
+      <widget class="QRadioButton" name="radioButton">
        <property name="text">
-        <string>TextLabel</string>
+        <string>9&quot;</string>
        </property>
       </widget>
      </item>
-     <item row="1" column="2" colspan="2">
-      <widget class="QLabel" name="label_2">
+     <item row="7" column="0" colspan="4">
+      <widget class="QPushButton" name="pushButton">
        <property name="text">
-        <string>TextLabel</string>
+        <string>Make Pizza</string>
        </property>
       </widget>
      </item>
-     <item row="0" column="2" colspan="2">
-      <widget class="QLabel" name="label">
-       <property name="text">
-        <string>TextLabel</string>
-       </property>
-      </widget>
+     <item row="8" column="0" colspan="4">
+      <widget class="QTextEdit" name="textEdit"/>
      </item>
     </layout>
    </widget>

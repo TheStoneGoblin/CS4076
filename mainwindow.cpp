@@ -101,6 +101,9 @@ void MainWindow::on_pushButton_clicked(){
     if (ui->checkBox_6->isChecked()){
         pizza->calAdd(5);
     }
-    cout << pizza->totalCalories;
+
+    ui->textEdit->setText(QString::number(pizza->totalCalories) + " calories " + QString::number(pizza->totalPrice) + " price");
+    pizza->totalCalories = 0;
+    pizza->totalPrice = 0;
 }
 

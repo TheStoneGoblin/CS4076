@@ -5,9 +5,13 @@
 
 class Food{
 private:
-    int calories = 100;
+    int calories = 0;
+    int price = 2;
 public:
     virtual int getCalories() = 0;
+    int getPrice(){
+        return price;
+    }
     friend class Corn;
     friend class Cheese;
     friend class Mush;
@@ -27,7 +31,7 @@ public:
 class Cheese : public Food{
 public:
     int getCalories() override{
-        int calories = 200;
+        calories = 200;
         return calories;
     }
 };
@@ -67,8 +71,10 @@ public:
 class makePizza{
     public:
     int totalCalories = 0;
+    int totalPrice = 0;
     Food* food[6] = {new Cheese(), new Corn(), new Ham(), new Mush(), new Olive(), new Ice()};
     void calAdd(int ing){
         totalCalories += food[ing]->getCalories();
+        totalPrice += food[ing]->getPrice();
     }
 };
