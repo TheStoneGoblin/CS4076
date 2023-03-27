@@ -3,12 +3,9 @@
 
 #endif // PIZZA_H
 
-int totalCalories = 0;
-
-
 class Food{
 private:
-    int calories = 0;
+    int calories = 100;
 public:
     virtual int getCalories() = 0;
     friend class Corn;
@@ -67,7 +64,11 @@ public:
     }
 };
 
-void makePizza(int ing){
+class makePizza{
+    public:
+    int totalCalories = 0;
     Food* food[6] = {new Cheese(), new Corn(), new Ham(), new Mush(), new Olive(), new Ice()};
-    totalCalories += food[ing]->getCalories();
-}
+    void calAdd(int ing){
+        totalCalories += food[ing]->getCalories();
+    }
+};
