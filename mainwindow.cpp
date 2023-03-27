@@ -130,8 +130,20 @@ void MainWindow::on_pushButton_clicked(){
     if (ui->checkBox_6->isChecked()){
         pizza->calAdd(5);
     }
+    if (ui->radioButton->isChecked()){
+        pizza->totalPrice += 7;
+    }
+    if (ui->radioButton_2->isChecked()){
+        pizza->totalPrice += 5;
+    }
+    if (ui->radioButton_3->isChecked()){
+        pizza->totalPrice += 9;
+    }
+    if (ui->radioButton_4->isChecked()){
+        pizza->totalPrice += 11;
+    }
 
-    ui->textEdit->setText(QString::number(pizza->totalCalories) + " calories " + QString::number(pizza->totalPrice) + " price");
+    ui->textEdit->setText(QString::number(pizza->totalCalories) + " calories " + QString::number(pizza->totalPrice) + " price to make");
     pizza->totalCalories = 0;
     pizza->totalPrice = 0;
 }

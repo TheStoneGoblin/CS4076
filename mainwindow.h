@@ -33,6 +33,14 @@ private slots:
 
     void on_pushButton_clicked();
 
+    void on_radioButton_2_toggled(bool checked);
+
+    void on_radioButton_toggled(bool checked);
+
+    void on_radioButton_3_toggled(bool checked);
+
+    void on_radioButton_4_toggled(bool checked);
+
 private:
     Ui::MainWindow *ui;
 };
