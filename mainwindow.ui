@@ -20,10 +20,17 @@
       <x>130</x>
       <y>50</y>
       <width>521</width>
-      <height>291</height>
+      <height>313</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">
+     <item row="6" column="1">
+      <widget class="QRadioButton" name="radioButton">
+       <property name="text">
+        <string>9&quot;</string>
+       </property>
+      </widget>
+     </item>
      <item row="6" column="3">
       <widget class="QRadioButton" name="radioButton_4">
        <property name="text">
@@ -31,17 +38,56 @@
        </property>
       </widget>
      </item>
+     <item row="0" column="0" colspan="2">
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QCheckBox" name="checkBox_2">
+         <property name="text">
+          <string>corn</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="checkBox">
+         <property name="text">
+          <string>cheese</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="checkBox_3">
+         <property name="text">
+          <string>ham</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="checkBox_4">
+         <property name="text">
+          <string>mushroom</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="checkBox_5">
+         <property name="text">
+          <string>olive</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="checkBox_6">
+         <property name="text">
+          <string>ice cream</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
      <item row="6" column="2">
       <widget class="QRadioButton" name="radioButton_3">
        <property name="text">
         <string>12&quot;</string>
-       </property>
-      </widget>
-     </item>
-     <item row="6" column="1">
-      <widget class="QRadioButton" name="radioButton">
-       <property name="text">
-        <string>9&quot;</string>
        </property>
       </widget>
      </item>
@@ -58,9 +104,6 @@
         <string>Make Pizza</string>
        </property>
       </widget>
-     </item>
-     <item row="8" column="0" colspan="4">
-      <widget class="QTextEdit" name="textEdit"/>
      </item>
      <item row="0" column="2" colspan="2">
       <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -108,51 +151,8 @@
        </item>
       </layout>
      </item>
-     <item row="0" column="0" colspan="2">
-      <layout class="QVBoxLayout" name="verticalLayout">
-       <item>
-        <widget class="QCheckBox" name="checkBox_2">
-         <property name="text">
-          <string>corn</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QCheckBox" name="checkBox">
-         <property name="text">
-          <string>cheese</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QCheckBox" name="checkBox_3">
-         <property name="text">
-          <string>ham</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QCheckBox" name="checkBox_4">
-         <property name="text">
-          <string>mushroom</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QCheckBox" name="checkBox_5">
-         <property name="text">
-          <string>olive</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QCheckBox" name="checkBox_6">
-         <property name="text">
-          <string>ice cream</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
+     <item row="8" column="0" colspan="4">
+      <widget class="QTextEdit" name="textEdit"/>
      </item>
     </layout>
    </widget>

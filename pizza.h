@@ -4,7 +4,7 @@
 #endif // PIZZA_H
 
 class Food{
-private:
+protected:
     int calories = 0;
     int price = 2;
 public:
