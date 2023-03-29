@@ -147,3 +147,39 @@ void MainWindow::on_pushButton_clicked(){
     pizza->totalCalories = 0;
     pizza->totalPrice = 0;
 }
+
+void MainWindow::on_horizontalSlider_valueChanged(int value)
+{
+    ui->label->setText(QString::number(value));
+}
+
+
+void MainWindow::on_horizontalSlider_2_valueChanged(int value)
+{
+    ui->label_2->setText(QString::number(value));
+}
+
+
+void MainWindow::on_horizontalSlider_3_valueChanged(int value)
+{
+    ui->label_3->setText(QString::number(value));
+}
+
+
+void MainWindow::on_horizontalSlider_4_valueChanged(int value)
+{
+    ui->label_4->setText(QString::number(value));
+}
+
+
+void MainWindow::on_horizontalSlider_5_valueChanged(int value)
+{
+    ui->label_5->setText(QString::number(value));
+}
+
+
+void MainWindow::on_horizontalSlider_6_valueChanged(int value)
+{
+    ui->label_6->setText(QString::number(value));
+}
+
