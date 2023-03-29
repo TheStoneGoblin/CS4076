@@ -3,7 +3,12 @@
 
 #endif // PIZZA_H
 
-class Food{
+#include <exception>
+#include <iostream>
+
+class Foods{};
+
+class Food : public Foods{
 protected:
     int calories = 0;
     double price = 0.5;
@@ -18,14 +23,17 @@ public:
     friend class Ham;
     friend class Olive;
     friend class Ice;
+    ~Food(){}
 };
 
 class Corn : public Food{
 public:
     int getCalories() override{
         calories = 10;
-        return calories;
+        int& ref = calories;
+        return ref;
     }
+    ~Corn(){}
 };
 
 class Cheese : public Food{
@@ -34,6 +42,7 @@ public:
         calories = 20;
         return calories;
     }
+    ~Cheese(){}
 };
 
 class Ham : public Food{
@@ -42,6 +51,7 @@ public:
         calories = 15;
         return calories;
     }
+    ~Ham(){}
 };
 
 class Mush : public Food{
@@ -50,6 +60,7 @@ public:
         calories = 12;
         return calories;
     }
+    ~Mush(){}
 };
 
 class Olive : public Food{
@@ -58,6 +69,7 @@ public:
         calories = 9;
         return calories;
     }
+    ~Olive(){}
 };
 
 class Ice : public Food{
@@ -66,37 +78,41 @@ public:
         calories = 100;
         return calories;
     }
+    ~Ice(){}
 };
 
 int totalCalories = 0;
 double totalPrice = 0;
 
-class makePizza{
-    public:
-    //int totalCalories = 0;
-    //int totalPrice = 0;
-    Food* food[6] = {new Cheese(), new Corn(), new Ham(), new Mush(), new Olive(), new Ice()};
-    void add(int ing){
-        totalCalories += food[ing]->getCalories();
-        totalPrice += food[ing]->getPrice();
-    }
-    int getCals(){
-        return totalCalories;
-    }
-    double getPrice(){
-        return totalPrice;
-    }
-    void setCals(){
-        totalCalories = 0;
-    }
-    void setPrice(){
-        totalPrice = 0;
-    }
-    void addCalls(int num){
-        totalCalories += num;
-    }
-    template<typename T>
-    void addPrice(T num) {
-      totalPrice += num;
-    }
+namespace nm{
+    class makePizza{
+        public:
+        Food* food[6] = {new Cheese(), new Corn(), new Ham(), new Mush(), new Olive(), new Ice()};
+
+        void add(int ing){
+            totalCalories += food[ing]->getCalories();
+            totalPrice += food[ing]->getPrice();
+        }
+        int getCals(){
+            return totalCalories;
+        }
+        double getPrice(){
+            return totalPrice;
+        }
+        void setCals(){
+            totalCalories = 0;
+        }
+        void setPrice(){
+            totalPrice = 0;
+        }
+        void addCalls(int num){
+            totalCalories += num;
+        }
+        template<typename T>
+        void addPrice(T num) {
+        totalPrice += num;
+        }
+
+        ~makePizza(){}
+    };
 };

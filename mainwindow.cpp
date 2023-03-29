@@ -12,7 +12,7 @@
 #include <iostream>
 using namespace std;
 
-makePizza *pizza = new makePizza;
+nm::makePizza *pizza = new nm::makePizza;
 
 QPushButton *push_button;
 QCheckBox *check1;
@@ -112,6 +112,7 @@ void MainWindow::on_pushButton_clicked(){
     connect(push_button, SIGNAL(clicked()), this, SLOT(on_pushButton_clicked()));
 
     if (ui->checkBox->isChecked()){
+
         for(int i = 0; i < ui->label_2->text().toInt(); i++){
             pizza->add(1);
         }
@@ -140,6 +141,8 @@ void MainWindow::on_pushButton_clicked(){
         for(int i = 0; i < ui->label_6->text().toInt(); i++){
             pizza->add(5);
         }
+
+        //throw MyException;
     }
     if (ui->radioButton->isChecked()){
         pizza->addPrice(7);
@@ -195,3 +198,9 @@ void MainWindow::on_horizontalSlider_6_valueChanged(int value)
     ui->label_6->setText(QString::number(value));
 }
 
+
+void MainWindow::on_actionQuit_triggered()
+{
+    delete pizza;
+    QCoreApplication::quit();
+}

@@ -75,7 +75,7 @@
        <item>
         <widget class="QCheckBox" name="checkBox_2">
          <property name="styleSheet">
-          <string notr="true">image: url(:/corn.png);</string>
+          <string notr="true">image: url(:/cheese.png);</string>
          </property>
          <property name="text">
           <string>ㅤㅤㅤㅤ</string>
@@ -85,7 +85,7 @@
        <item>
         <widget class="QCheckBox" name="checkBox">
          <property name="styleSheet">
-          <string notr="true">image: url(:/cheese.png);</string>
+          <string notr="true">image: url(:/corn.png);</string>
          </property>
          <property name="text">
           <string>ㅤㅤㅤㅤ</string>
@@ -243,6 +243,7 @@
     </layout>
    </widget>
   </widget>
+  <widget class="QStatusBar" name="statusbar"/>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
@@ -252,8 +253,20 @@
      <height>20</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuPizza_maker_9000">
+    <property name="title">
+     <string>Pizza maker 9000</string>
+    </property>
+    <addaction name="separator"/>
+    <addaction name="actionQuit"/>
+   </widget>
+   <addaction name="menuPizza_maker_9000"/>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionQuit">
+   <property name="text">
+    <string>Quit</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>
