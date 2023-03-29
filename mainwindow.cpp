@@ -111,41 +111,53 @@ void MainWindow::on_pushButton_clicked(){
     push_button = new QPushButton(this);
     connect(push_button, SIGNAL(clicked()), this, SLOT(on_pushButton_clicked()));
 
-
     if (ui->checkBox->isChecked()){
-        pizza->calAdd(0);
+        for(int i = 0; i < ui->label_2->text().toInt(); i++){
+            pizza->add(1);
+        }
     }
     if (ui->checkBox_2->isChecked()){
-        pizza->calAdd(1);
+        for(int i = 0; i < ui->label->text().toInt(); i++){
+            pizza->add(0);
+        }
     }
     if (ui->checkBox_3->isChecked()){
-        pizza->calAdd(2);
+        for(int i = 0; i < ui->label_3->text().toInt(); i++){
+            pizza->add(2);
+        }
     }
     if (ui->checkBox_4->isChecked()){
-        pizza->calAdd(3);
+        for(int i = 0; i < ui->label_4->text().toInt(); i++){
+            pizza->add(3);
+        }
     }
     if (ui->checkBox_5->isChecked()){
-        pizza->calAdd(4);
+        for(int i = 0; i < ui->label_5->text().toInt(); i++){
+            pizza->add(4);
+        }
     }
     if (ui->checkBox_6->isChecked()){
-        pizza->calAdd(5);
+        for(int i = 0; i < ui->label_6->text().toInt(); i++){
+            pizza->add(5);
+        }
     }
     if (ui->radioButton->isChecked()){
-        pizza->totalPrice += 7;
+        pizza->addPrice(7);
     }
     if (ui->radioButton_2->isChecked()){
-        pizza->totalPrice += 5;
+        pizza->addPrice(5);
     }
     if (ui->radioButton_3->isChecked()){
-        pizza->totalPrice += 9;
+        pizza->addPrice(9);
     }
     if (ui->radioButton_4->isChecked()){
-        pizza->totalPrice += 11;
+        pizza->addPrice(11);
     }
 
-    ui->textEdit->setText(QString::number(pizza->totalCalories) + " calories " + QString::number(pizza->totalPrice) + " price to make");
-    pizza->totalCalories = 0;
-    pizza->totalPrice = 0;
+    ui->textEdit->setText(QString::number(pizza->getCals()) + " calories " + QString::number(pizza->getPrice()) + " price to make");
+
+    pizza->setCals();
+    pizza->setPrice();
 }
 
 void MainWindow::on_horizontalSlider_valueChanged(int value)

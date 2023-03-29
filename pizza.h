@@ -6,7 +6,7 @@
 class Food{
 protected:
     int calories = 0;
-    int price = 2;
+    double price = 0.5;
 public:
     virtual int getCalories() = 0;
     int getPrice(){
@@ -23,7 +23,7 @@ public:
 class Corn : public Food{
 public:
     int getCalories() override{
-        calories = 100;
+        calories = 10;
         return calories;
     }
 };
@@ -31,7 +31,7 @@ public:
 class Cheese : public Food{
 public:
     int getCalories() override{
-        calories = 200;
+        calories = 20;
         return calories;
     }
 };
@@ -39,7 +39,7 @@ public:
 class Ham : public Food{
 public:
     int getCalories() override{
-        calories = 150;
+        calories = 15;
         return calories;
     }
 };
@@ -47,7 +47,7 @@ public:
 class Mush : public Food{
 public:
     int getCalories() override{
-        calories = 120;
+        calories = 12;
         return calories;
     }
 };
@@ -55,7 +55,7 @@ public:
 class Olive : public Food{
 public:
     int getCalories() override{
-        calories = 90;
+        calories = 9;
         return calories;
     }
 };
@@ -63,18 +63,39 @@ public:
 class Ice : public Food{
 public:
     int getCalories() override{
-        calories = 1000;
+        calories = 100;
         return calories;
     }
 };
 
+int totalCalories = 0;
+int totalPrice = 0;
+
 class makePizza{
     public:
-    int totalCalories = 0;
-    int totalPrice = 0;
+    //int totalCalories = 0;
+    //int totalPrice = 0;
     Food* food[6] = {new Cheese(), new Corn(), new Ham(), new Mush(), new Olive(), new Ice()};
-    void calAdd(int ing){
+    void add(int ing){
         totalCalories += food[ing]->getCalories();
         totalPrice += food[ing]->getPrice();
+    }
+    int getCals(){
+        return totalCalories;
+    }
+    int getPrice(){
+        return totalPrice;
+    }
+    void setCals(){
+        totalCalories = 0;
+    }
+    void setPrice(){
+        totalPrice = 0;
+    }
+    void addCalls(int num){
+        totalCalories += num;
+    }
+    void addPrice(int num){
+        totalPrice += num;
     }
 };
