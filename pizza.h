@@ -95,9 +95,6 @@ class makePizza{
     void addCalls(int num){
         totalCalories += num;
     }
-    void addPrice(int num){
-        totalPrice += num;
-    }
     template<typename T>
     void addPrice(T num) {
       totalPrice += num;
