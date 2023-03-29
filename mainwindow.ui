@@ -20,7 +20,7 @@
       <x>130</x>
       <y>50</y>
       <width>521</width>
-      <height>294</height>
+      <height>318</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">
@@ -74,43 +74,61 @@
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
         <widget class="QCheckBox" name="checkBox_2">
+         <property name="styleSheet">
+          <string notr="true">image: url(:/corn.png);</string>
+         </property>
          <property name="text">
-          <string>corn</string>
+          <string>ㅤㅤㅤㅤ</string>
          </property>
         </widget>
        </item>
        <item>
         <widget class="QCheckBox" name="checkBox">
+         <property name="styleSheet">
+          <string notr="true">image: url(:/cheese.png);</string>
+         </property>
          <property name="text">
-          <string>cheese</string>
+          <string>ㅤㅤㅤㅤ</string>
          </property>
         </widget>
        </item>
        <item>
         <widget class="QCheckBox" name="checkBox_3">
+         <property name="styleSheet">
+          <string notr="true">image: url(:/ham.png);</string>
+         </property>
          <property name="text">
-          <string>ham</string>
+          <string>ㅤㅤㅤㅤ</string>
          </property>
         </widget>
        </item>
        <item>
         <widget class="QCheckBox" name="checkBox_4">
+         <property name="styleSheet">
+          <string notr="true">image: url(:/mush.png);</string>
+         </property>
          <property name="text">
-          <string>mushroom</string>
+          <string>ㅤㅤㅤㅤ</string>
          </property>
         </widget>
        </item>
        <item>
         <widget class="QCheckBox" name="checkBox_5">
+         <property name="styleSheet">
+          <string notr="true">image: url(:/olive.png);</string>
+         </property>
          <property name="text">
-          <string>olive</string>
+          <string>ㅤㅤㅤㅤ</string>
          </property>
         </widget>
        </item>
        <item>
         <widget class="QCheckBox" name="checkBox_6">
+         <property name="styleSheet">
+          <string notr="true">image: url(:/ice.png);</string>
+         </property>
          <property name="text">
-          <string>ice cream</string>
+          <string>ㅤㅤㅤㅤ</string>
          </property>
         </widget>
        </item>
