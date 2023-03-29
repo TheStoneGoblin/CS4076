@@ -9,7 +9,7 @@ protected:
     double price = 0.5;
 public:
     virtual int getCalories() = 0;
-    int getPrice(){
+    double getPrice(){
         return price;
     }
     friend class Corn;
@@ -69,7 +69,7 @@ public:
 };
 
 int totalCalories = 0;
-int totalPrice = 0;
+double totalPrice = 0;
 
 class makePizza{
     public:
@@ -83,7 +83,7 @@ class makePizza{
     int getCals(){
         return totalCalories;
     }
-    int getPrice(){
+    double getPrice(){
         return totalPrice;
     }
     void setCals(){
@@ -97,5 +97,9 @@ class makePizza{
     }
     void addPrice(int num){
         totalPrice += num;
+    }
+    template<typename T>
+    void addPrice(T num) {
+      totalPrice += num;
     }
 };
