@@ -28,6 +28,13 @@ public:
     friend class Ham;
     friend class Olive;
     friend class Ice;
+/*
+ * attempt at operator overloading, can't fit it in anywhere
+    int operator+(int num){
+        return num + getCalories();
+    }
+*/
+
     ~Food(){}
 };
 
@@ -42,10 +49,19 @@ public:
 };
 
 class Cheese : public Food{
+private:
+    int* calories1;
 public:
+    Cheese(int num){
+        calories1 = new int;
+        *calories1 = num;
+    }
+    Cheese(const Cheese& other){
+        calories1 = other.calories1;
+    }
+
     int getCalories() override{
-        calories = 20;
-        return calories;
+        return *calories1;
     }
     ~Cheese(){}
 };
@@ -96,17 +112,19 @@ struct timeStruct{
     unsigned int m : 7;
 };
 
-
-
 namespace nm{
     class makePizza{
     private:
         int totalCalories;
         double totalPrice;
-        public:
+    public:
         makePizza(int totalCalories, double totalPrice) : totalCalories(totalCalories), totalPrice(totalPrice){}
+        makePizza(const makePizza& other){
+            totalCalories = other.totalCalories;
+            totalPrice = other.totalPrice;
+        }
 
-        Food* food[6] = {new Cheese(), new Corn(), new Ham(), new Mush(), new Olive(), new Ice()};
+        Food* food[6] = {new Cheese(20), new Corn(), new Ham(), new Mush(), new Olive(), new Ice()};
         timeStruct time1;
 
         void add(int ing){
@@ -139,10 +157,6 @@ namespace nm{
         }
 
         QString print(){
-            //the use of operator overloading
-            //QString s = getCals() + " calories ";
-            //return s + QString::number(getPrice()) + " price to make";
-
             auto now = std::chrono::system_clock::now();
             std::time_t now_t = std::chrono::system_clock::to_time_t(now);
             std::tm* now_tm = std::localtime(&now_t);
@@ -162,9 +176,6 @@ namespace nm{
             return QString::number(getCals()) + " calories " + QString::number(getPrice()) + " price to make \n" +
                    "Your meal will be ready at " + QString::number(time1.h) + ":"+ QString::number(time1.m);
         }
-
-        //friend QString& operator<<(QString& out, const makePizza& pizza);
-
         ~makePizza(){}
     };
 };
@@ -175,15 +186,3 @@ public:
         return "What is wrong with you? Don't put ice cream on pizza";
     }
 };
-
-/*
-QString& operator<<(QString& out, nm::makePizza& pizza) {
-        out = pizza.print();
-        return out;
-    }
-*/
-
-QString operator+ (const QString s1, int num){
-    QString s = QString::number(num) + s1;
-    return s;
-}
