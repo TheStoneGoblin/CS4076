@@ -77,7 +77,7 @@ public:
 class Ice : public Food{
 public:
     int getCalories() override{
-        calories = 100;
+        calories = 1000;
         return calories;
     }
     ~Ice(){}
@@ -127,4 +127,11 @@ namespace nm{
 
         ~makePizza(){}
     };
+};
+
+class MyException : public std::exception {
+public:
+    const char* what() const noexcept override {
+        return "What is wrong with you? Don't put ice cream on pizza";
+    }
 };

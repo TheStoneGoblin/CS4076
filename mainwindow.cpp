@@ -139,11 +139,17 @@ void MainWindow::on_pushButton_clicked(){
         }
     }
     if (ui->checkBox_6->isChecked()){
-        for(int i = 0; i < ui->label_6->text().toInt(); i++){
+        /*for(int i = 0; i < ui->label_6->text().toInt(); i++){
             pizza->add(5);
         }
-
-        //throw MyException;
+        */
+        try {
+                throw MyException();
+            }
+            catch (const std::exception& e) {
+                ui->textEdit->setText("[Exception encountered]");
+                ui->textEdit->append(e.what());
+            }
     }
     if (ui->radioButton->isChecked()){
         pizza->addPrice(7);
@@ -158,7 +164,9 @@ void MainWindow::on_pushButton_clicked(){
         pizza->addPrice(11);
     }
 
+    if(!(ui->checkBox_6->isChecked())){
     ui->textEdit->setText(QString::number(pizza->getCals()) + " calories " + QString::number(pizza->getPrice()) + " price to make");
+    }
     pizza->setCals();
     pizza->setPrice();
 }
