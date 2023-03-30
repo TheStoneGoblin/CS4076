@@ -13,7 +13,7 @@
 
 using namespace std;
 
-nm::makePizza *pizza = new nm::makePizza;
+nm::makePizza *pizza = new nm::makePizza(0,0);
 
 QPushButton *push_button;
 QCheckBox *check1;
@@ -165,8 +165,10 @@ void MainWindow::on_pushButton_clicked(){
     }
 
     if(!(ui->checkBox_6->isChecked())){
-    ui->textEdit->setText(QString::number(pizza->getCals()) + " calories " + QString::number(pizza->getPrice()) + " price to make");
+    //ui->textEdit->setText(QString::number(pizza->getCals()) + " calories " + QString::number(pizza->getPrice()) + " price to make");
+    ui->textEdit->setText(pizza->print());
     }
+
     pizza->setCals();
     pizza->setPrice();
 }

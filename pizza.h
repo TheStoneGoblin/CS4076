@@ -7,12 +7,15 @@
 
 #include <exception>
 #include <iostream>
+#include <chrono>
+#include <ctime>
+
+int calories = 0;
 
 class Foods{};
 
 class Food : public Foods{
 protected:
-    int calories = 0;
     double price = 0.5;
 public:
     virtual int getCalories() = 0;
@@ -83,18 +86,28 @@ public:
     ~Ice(){}
 };
 
-int totalCalories = 0;
-double totalPrice = 0;
-
 union idk{
     int a;
     int b;
 };
 
+struct timeStruct{
+    unsigned int h : 7;
+    unsigned int m : 7;
+};
+
+
+
 namespace nm{
     class makePizza{
+    private:
+        int totalCalories;
+        double totalPrice;
         public:
+        makePizza(int totalCalories, double totalPrice) : totalCalories(totalCalories), totalPrice(totalPrice){}
+
         Food* food[6] = {new Cheese(), new Corn(), new Ham(), new Mush(), new Olive(), new Ice()};
+        timeStruct time1;
 
         void add(int ing){
             totalCalories += food[ing]->getCalories();
@@ -125,6 +138,33 @@ namespace nm{
         totalPrice += num;
         }
 
+        QString print(){
+            //the use of operator overloading
+            //QString s = getCals() + " calories ";
+            //return s + QString::number(getPrice()) + " price to make";
+
+            auto now = std::chrono::system_clock::now();
+            std::time_t now_t = std::chrono::system_clock::to_time_t(now);
+            std::tm* now_tm = std::localtime(&now_t);
+
+            int hour = now_tm->tm_hour;
+            int minute = now_tm->tm_min + 15;
+            if(minute >= 60){
+                hour += 1;
+                minute -= 60;
+            }
+            if(hour >= 24){
+                hour -= 24;
+            }
+            time1.h = hour;
+            time1.m = minute;
+
+            return QString::number(getCals()) + " calories " + QString::number(getPrice()) + " price to make \n" +
+                   "Your meal will be ready at " + QString::number(time1.h) + ":"+ QString::number(time1.m);
+        }
+
+        //friend QString& operator<<(QString& out, const makePizza& pizza);
+
         ~makePizza(){}
     };
 };
@@ -135,3 +175,15 @@ public:
         return "What is wrong with you? Don't put ice cream on pizza";
     }
 };
+
+/*
+QString& operator<<(QString& out, nm::makePizza& pizza) {
+        out = pizza.print();
+        return out;
+    }
+*/
+
+QString operator+ (const QString s1, int num){
+    QString s = QString::number(num) + s1;
+    return s;
+}
