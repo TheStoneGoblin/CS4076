@@ -3,6 +3,8 @@
 
 #endif // PIZZA_H
 
+#pragma once
+
 #include <exception>
 #include <iostream>
 
@@ -84,6 +86,11 @@ public:
 int totalCalories = 0;
 double totalPrice = 0;
 
+union idk{
+    int a;
+    int b;
+};
+
 namespace nm{
     class makePizza{
         public:
@@ -94,6 +101,11 @@ namespace nm{
             totalPrice += food[ing]->getPrice();
         }
         int getCals(){
+            union idk idk1;
+            idk1.a = 0;
+            //I have no idea where to put unions in my code so this will have to do
+            //If somebody held a gun to my head and asked me to use unions in a useful way in this specific code I would die
+
             return totalCalories;
         }
         double getPrice(){

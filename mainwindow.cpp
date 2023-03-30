@@ -10,6 +10,7 @@
 #include <QPixmap>
 
 #include <iostream>
+
 using namespace std;
 
 nm::makePizza *pizza = new nm::makePizza;
@@ -158,7 +159,6 @@ void MainWindow::on_pushButton_clicked(){
     }
 
     ui->textEdit->setText(QString::number(pizza->getCals()) + " calories " + QString::number(pizza->getPrice()) + " price to make");
-
     pizza->setCals();
     pizza->setPrice();
 }
