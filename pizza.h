@@ -15,13 +15,11 @@ int calories = 0;
 class Foods{};
 
 class Food : public Foods{
-protected:
+private:
     double price = 0.5;
 public:
     virtual int getCalories() = 0;
-    double getPrice(){
-        return price;
-    }
+    virtual double getPrice() = 0;
     friend class Corn;
     friend class Cheese;
     friend class Mush;
@@ -45,6 +43,9 @@ public:
         int& ref = calories;
         return ref;
     }
+    double getPrice() override{
+        return price;
+    }
     ~Corn(){}
 };
 
@@ -63,6 +64,9 @@ public:
     int getCalories() override{
         return *calories1;
     }
+    double getPrice() override{
+        return price;
+    }
     ~Cheese(){}
 };
 
@@ -71,6 +75,9 @@ public:
     int getCalories() override{
         calories = 15;
         return calories;
+    }
+    double getPrice() override{
+        return price;
     }
     ~Ham(){}
 };
@@ -81,6 +88,9 @@ public:
         calories = 12;
         return calories;
     }
+    double getPrice() override{
+        return price;
+    }
     ~Mush(){}
 };
 
@@ -90,6 +100,9 @@ public:
         calories = 9;
         return calories;
     }
+    double getPrice() override{
+        return price;
+    }
     ~Olive(){}
 };
 
@@ -98,6 +111,9 @@ public:
     int getCalories() override{
         calories = 1000;
         return calories;
+    }
+    double getPrice() override{
+        return price;
     }
     ~Ice(){}
 };
@@ -114,7 +130,7 @@ struct timeStruct{
 
 namespace nm{
     class makePizza{
-    private:
+    protected:
         int totalCalories;
         double totalPrice;
     public:
